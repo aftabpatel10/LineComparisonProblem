@@ -16,27 +16,29 @@ namespace LineComparison
             int x2 = Convert.ToInt32(Console.ReadLine());
             int y1 = Convert.ToInt32(Console.ReadLine());
             int y2 = Convert.ToInt32(Console.ReadLine());
-            var length1 = Math.Sqrt((Math.Pow(x1 - x2, 2) + Math.Pow(y1 - y2, 2)));
-            Console.WriteLine("Length of line1 is :" + length1);
-
+            Console.WriteLine("Enter value for line2 c1,c2,b1,b2");
             int c1 = Convert.ToInt32(Console.ReadLine());
             int c2 = Convert.ToInt32(Console.ReadLine());
             int b1 = Convert.ToInt32(Console.ReadLine());
             int b2 = Convert.ToInt32(Console.ReadLine());
-           
-            var length2 = Math.Sqrt((Math.Pow(c1 - c2, 2) + Math.Pow(b1 - b2, 2)));
-            
-            
-            Console.WriteLine("Length of line2 is: " + length2);
-            var result = Equals(length1, length2);
-            if (result == false)
+            var a = Math.Sqrt((Math.Pow(x1 - x2, 2) + Math.Pow(y1 - y2, 2)));
+            Console.WriteLine("Length of line1 is :" + a);
+            var b = Math.Sqrt((Math.Pow(c1 - c2, 2) + Math.Pow(b1 - b2, 2)));
+            Console.WriteLine("Length of line2 is: " + b);
+            int result = a.CompareTo(b);
+          
+            if (result >0)
             {
-                Console.WriteLine("lines are not equal");
+                Console.WriteLine("length of line1 is Greater than line2");
 
+            }
+            else if (result <0)
+            {
+                Console.WriteLine("length of line 1 less than line 2");
             }
             else
             {
-                Console.WriteLine("lines are equal");
+                Console.WriteLine("length of both lines are equal");
             }
             Console.ReadLine();
         }
